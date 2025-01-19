@@ -1,0 +1,23 @@
+:root {
+
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+
+}
+
+nav {
+
+    width: 5rem;
+    height: 100vh;
+    background-color: var(--bg-primary);
+    position: fixed;
+
+}
+
+.navbar ul{
+
+   list-style: none;
+
+}
