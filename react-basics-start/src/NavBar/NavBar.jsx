@@ -1,5 +1,5 @@
 import styles from './NavBar.module.css'
-import { faHouse, faDatabase, faToolbox } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faDatabase, faToolbox, faCircleHalfStroke} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function NavBar(){
@@ -7,25 +7,32 @@ function NavBar(){
     return(<>
 
         <nav>
-            <ul className={styles.navbar}>
-                <li className='nav-item'>
-                    <a href="#" className='nav-link'>
+            <ul className={styles.navList}>
+                <li className={styles.navItem}>
+                    <a href="#" className={styles.navLink}>
                         <FontAwesomeIcon icon={faHouse}/>
-                        <span className='link-text'>Home</span>
+                        <span className={styles.linkText}>Home</span>
                     </a>
                 </li>
 
-                <li className='nav-item'>
-                    <a href="#" className='nav-link'>
+                <li className={styles.navItem}>
+                    <a href="#" className={styles.navLink}>
                         <FontAwesomeIcon icon={faDatabase}/>
-                        <span className='link-text'>Database</span>
+                        <span className={styles.linkText}>Storage</span>
                     </a>
                 </li>
 
-                <li className='nav-item'>
-                    <a href="#" className='nav-link'>
+                <li className={styles.navItem}>
+                    <a href="#"  className={styles.navLink}>
                         <FontAwesomeIcon icon={faToolbox}/>
-                        <span className='link-text'>Home</span>
+                        <span className={styles.linkText}>Settings</span>
+                    </a>
+                </li>
+
+                <li className={styles.navItem}>
+                    <a href="#"  className={styles.navLink}>
+                        <FontAwesomeIcon icon={faCircleHalfStroke}/>
+                        <span className={styles.linkText}>Toggle</span>
                     </a>
                 </li>
 

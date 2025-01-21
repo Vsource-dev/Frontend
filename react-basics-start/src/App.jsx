@@ -1,12 +1,11 @@
-import NavBar from "./NavBar/NavBar.jsx"
+import ColorPicker from './ColorPicker.jsx'
 
 function App() {
 
     return(
     <>
 
-        <NavBar/>
-
+        <ColorPicker/>
 
     </>
     )
