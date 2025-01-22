@@ -5,15 +5,20 @@ function Counter(){
     let[display, setDisplay] = useState(0);
 
     const incrementCount = () => {
-        setDisplay(display + 1)
+        setDisplay(display => display + 1)
+        setDisplay(display => display + 1)
+        setDisplay(display => display + 1)
+
     };
 
     const decrementCount = () => {
-        setDisplay(display - 1)
+        setDisplay(display => display - 1)
+        setDisplay(display => display - 1)
+        setDisplay(display => display - 1)
     };
 
     const reset = () =>   {
-        setDisplay(0)
+        setDisplay(display => display = 0)
     };
 
     return(

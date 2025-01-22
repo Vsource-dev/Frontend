@@ -1,11 +1,11 @@
-import ColorPicker from './ColorPicker.jsx'
+import ChangeArray from './ChangeArray.jsx'
+
 
 function App() {
 
     return(
     <>
-
-        <ColorPicker/>
+        <ChangeArray/>
 
     </>
     )
