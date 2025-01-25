@@ -1,13 +1,13 @@
-import ChangeArray from './ChangeArray.jsx'
-
+import ToDoList from "./ToDoList"
 
 function App() {
 
     return(
-    <>
-        <ChangeArray/>
-
-    </>
+        <>
+            
+            <ToDoList/>
+        
+        </>
     )
   
 }

@@ -2,34 +2,41 @@ import React, {useState} from "react";
 
 function ChangeArray(){
 
-    const [foods, setFoods] = useState(['Apple', 'Orange', 'Banana']);
+    const[tasks, setTask] = useState(['Clean','Eat','Sleep']);
 
-    function addFood(){
+    function handleAddTask(){
 
-        const getFood = document.getElementById('inputfruit').value;
-        document.getElementById('inputfruit').value = '';
-        setFoods(f => [...f, getFood])
- 
+        const getTask = document.getElementById('task-input').value;
+        document.getElementById('task-input').value = ''; 
+
+        if(!getTask){
+
+            alert('Enter something First')
+            return;
+
+        }
+
+        setTask((t) => [...t, getTask])
+
     }
 
-    function delFood(index){
+    function handleRemoveTask(index){
 
-        setFoods(foods.filter((_, i) => i !== index))
+        setTask(tasks.filter((_ , i) => i !== index))
 
     }
 
-    return(<>
-    
-        <div>
-            <h2>stan</h2>
+    return(
+        <>
+            <h2>To-do List</h2>
             <ul>
-                {foods.map((food, index)=><li key={index} onClick={() => delFood(index )}>{food}</li>)}
+                {tasks.map((task, index) =><li key={index} onClick={() => handleRemoveTask(index)}>{task}</li>)}
             </ul>
-            <input type="text" id="inputfruit" placeholder="Name of fruit"/>
-            <button onClick={addFood}>Add fruit</button>
-        </div>
-    
-    </>)
+            <input type="text" id='task-input' placeholder="Enter task"/>
+            <button onClick={handleAddTask}>Add task</button>
+        </>
+    )
+
 
 }
 

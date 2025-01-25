@@ -2,42 +2,61 @@ import React, {useState} from 'react'
 
 function MyComponent(){
     
-    const [name, setName] = useState("Guest");
-    const [age, setAge] = useState(0);
-    const [isEmployed, setIsEmployed] = useState(false);
+    const[cars, setCars] = useState([])
+    const[years, setYear] = useState(new Date().getFullYear());
+    const[make, setMake] = useState('')
+    const[models, setModel] = useState('');
 
-    const updateName = () => {
+    function handleAddCar(){
 
-        setName("Sponge")
+        const newCar = {year: years, makes: make, model: models}
+        setCars(c => [...c, newCar]) 
+
+        setYear(new Date().getFullYear())
+        setMake("")
+        setModel("")
 
     }
 
-    const updateAge = () => {
+    function handleRemoveCar(index){
 
-        setAge(age + 1)
+        setCars(c => c.filter((_, i) => i !== index));
 
     }
 
-    const updateIsEmployed = () => {
+    function handleYearChange(event){
 
-        setIsEmployed(true)
+        setYear(event.target.value)
+
+    }
+
+    function handleMakeChange(event){
+
+        setMake(event.target.value)
+
+    }
+
+    function handleModelChange(event){
+
+        setModel(event.target.value)
 
     }
 
     return(<>
     
-        <div>
-            <p>Name: {name}</p>
-            <button onClick={updateName}>Set name</button>
+    <div className="container">
 
-            <p>Age: {age}</p>
-            <button onClick={updateAge}>Set age</button>
+        <h2>List of Car Objexts</h2>
+        <ul>
+           {cars.map((car, index) => <li onClick={() => handleRemoveCar(index)} key={index}>{car.year} {car.makes} {car.model}</li>)}     
+        </ul>
+        <input type="number" value={years} onChange={handleYearChange}/><br />
+        <input type="text" value={make} placeholder='Enter make' id='make-inp' onChange={handleMakeChange}/><br />
+        <input type="text" value={models} placeholder='Enter model' id='model-inp' onChange={handleModelChange}/><br />
+        <button onClick={handleAddCar}>Add car</button>
 
-            <p>Employed: {isEmployed ? 'YES' : 'NO'}</p>
-            <button onClick={updateIsEmployed}>Toggle Status</button>
+    </div>
 
-        </div>
-    
     </>)
     
 }
